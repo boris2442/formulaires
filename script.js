@@ -21,19 +21,19 @@ inputName.addEventListener("input", (e)=>{
 });
 
 
-const spanSurname=document.querySelector(".surname-container >span");
-const inputSurname=document.getElementById("surname");
-inputSurname.addEventListener("input", (e)=>{
+const spanUsername=document.querySelector(".prenom-container >span");
+const inputUsername=document.getElementById("surname");
+inputUsername.addEventListener("input", (e)=>{
 const input2=e.target.value;
 if(input2.length<3 || input2.length>20){
-    spanSurname.innerHTML='le prenom doit avoir entre 2 et 20 caractères';
-    inputSurname.classList.add("error-name");
+    spanUsername.innerHTML='le prenom doit avoir entre 3 et 20 caractères';
+    inputUsername.classList.add("error-name");
 }else if(symbols.test(input2)){
-    spanSurname='le prenom ne doit pas avoir de caractères spéciaux';
-    inputSurname.classList.add("error-name");
+    spanUsername.innerHTML='le prenom ne doit pas avoir de caractères spéciaux';
+    inputUsername.classList.add("error-name");
 }else{
-    spanSurname.innerHTML="";
-    inputSurname.classList.remove("error-name");
+    spanUsername.innerHTML="";
+    inputUsername.classList.remove("error-name");
 }
 
 
