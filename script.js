@@ -1,3 +1,7 @@
+window.onload = function() {
+    document.querySelector('.loader').style.display = 'none';
+    document.querySelector('.loader').style.transition='5s ease-out'
+};
 
 const spanName=document.querySelector(".name-container > span")
 const symbols = /[^a-zA-Z0-9\s]/;
@@ -39,5 +43,20 @@ if(input2.length<3 || input2.length>20){
 
 });
 
+
+const spanMessage=document.querySelector(".message-container > span");
+const message=document.getElementById("message");
+
+message.addEventListener("input", (e)=>{
+    const textareaText = e.target.value;
+
+    if(textareaText.length <10 || textareaText > 70){
+        spanMessage.innerHTML="le message doit avoir entre 10 et 70 caracteres" ;
+        message.classList.add("error-name");
+    }else{
+        spanMessage.innerHTML="" ;
+        message.classList.remove("error-name");
+    }
+})
 
 
