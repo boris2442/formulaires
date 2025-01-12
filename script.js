@@ -1,17 +1,4 @@
-// document.getElementById("name").addEventListener("input", function (){
-//     const input=this.value;
-//     console.log(input)
-//     const message=document.getElementById("alertName")
 
-//     if(input.length < 10 || input.length >20){
-//         console.log("hey")
-//         message.textContent='Le nom doit avoir entre 10 et 20 caractères.';
-//         message.style.color='red';
-//     }else{
-//         message.textContent='Nombre de caractere:' + input.length;
-//         message.style.color='red';
-//     }
-// })
 const spanName=document.querySelector(".name-container > span")
 const symbols = /[^a-zA-Z0-9\s]/;
 console.log(symbols)
@@ -31,5 +18,24 @@ inputName.addEventListener("input", (e)=>{
         inputName.classList.remove("error-name");  
       }
        
+});
+
+
+const spanSurname=document.querySelector(".surname-container >span");
+const inputSurname=document.getElementById("surname");
+inputSurname.addEventListener("input", (e)=>{
+const input2=e.target.value;
+if(input2.length<3 || input2.length>20){
+    spanSurname.innerHTML='le prenom doit avoir entre 2 et 20 caractères';
+    inputSurname.classList.add("error-name");
+}else if(symbols.test(input2)){
+    spanSurname='le prenom ne doit pas avoir de caractères spéciaux';
+    inputSurname.classList.add("error-name");
+}else{
+    spanSurname.innerHTML="";
+    inputSurname.classList.remove("error-name");
+}
+
+
 });
 
