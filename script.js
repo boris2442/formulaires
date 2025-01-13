@@ -57,6 +57,12 @@ message.addEventListener("input", (e)=>{
         spanMessage.innerHTML="" ;
         message.classList.remove("error-name");
     }
-})
+});
+const forms=document.querySelector("#dynamicForm")
+// const  submits=document.getElementById("soumettre");
+forms.addEventListener("submit", (e)=>{
 
+e.preventDefault(); // Empêche le rechargement de la page
+alert('Formulaire soumis avec succès !');
+})
 
